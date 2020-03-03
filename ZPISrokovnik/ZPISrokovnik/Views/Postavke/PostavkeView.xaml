@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ZPISrokovnik.Views.Postavke.PostavkeView">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+            <Image Source="login.png" HorizontalOptions="Center" Margin="0,0,0,20"/>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="{Binding KorisnickoIme}" 
+                       FontSize="20"
+                       TextColor="Black"/>
+            </StackLayout>
+            <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+                <Label Text="{Binding KorisnickaOznaka}" 
+                       FontSize="15"
+                       TextColor="Black"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Spacing="0" 
+                         HorizontalOptions="CenterAndExpand" 
+                         VerticalOptions="CenterAndExpand">
+                <Label Text="Obavijesti" 
+                       Font="15"
+                       TextColor="Black"/>
+                <Switch Scale="1" 
+                        IsToggled="{Binding IsToggled}"
+                />
+            </StackLayout>
+            <Button Text="Odjava" 
+                    BorderColor="Red" 
+                    HorizontalOptions="Center"  
+                    VerticalOptions="Center"
+                    Command="{Binding OdjavaCommand}"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

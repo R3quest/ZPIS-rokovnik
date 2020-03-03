@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:behaviors="clr-namespace:ZPISrokovnik.Behaviors"
+             Title="Prijava"
+             x:Class="ZPISrokovnik.Views.LoginView">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="20" Padding="20" VerticalOptions="Center">
+                <Image Source="login.png" HorizontalOptions="Center" Margin="0,0,0,20"/>
+                <Entry Placeholder="Korisničko ime" Text="{Binding KorisnickoIme.Value}">
+                    <Entry.Behaviors>
+                        <behaviors:EventToCommandBehavior
+                            EventName="Unfocused"
+                            Command="{Binding DohvatiInstanceAsync}"/>
+                        <behaviors:EventToCommandBehavior
+                        EventName="TextChanged"
+                        Command="{Binding ValidateUserNameCommand}"/>
+                    </Entry.Behaviors>
+                </Entry>
+                <Entry Placeholder="Lozinka" Text="{Binding Lozinka.Value}" IsPassword="true">
+                    <Entry.Behaviors>
+                        <behaviors:EventToCommandBehavior
+                        EventName="TextChanged"
+                        Command="{Binding ValidatePasswordCommand}"/>
+                    </Entry.Behaviors>
+                    <!--<Entry.Style>
+                    <OnPlatform x:TypeArguments="Style">
+                        <On Platform="iOS, Android" Value="{StaticResource EntryStyle}" />
+                    </OnPlatform>
+                </Entry.Style>-->
+                </Entry>
+                <Picker Title="Korisnička instanca"
+                ItemsSource="{Binding Tijela, Mode=TwoWay}"
+                ItemDisplayBinding="{Binding Path=Value}"
+                SelectedItem="{Binding SelectedItem}"
+                IsEnabled="{Binding PostojeKorisnickeInstance, Mode=TwoWay}">
+                </Picker>
+                <Button Text="Prijava" 
+                    TextColor="White" 
+                    BackgroundColor="#2196F3" 
+                    Command="{Binding LoginCommand}" 
+                    IsEnabled="{Binding UneseniIspravniPodaci}">
+                </Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

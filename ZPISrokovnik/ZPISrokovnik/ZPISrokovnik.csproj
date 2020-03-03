@@ -1,0 +1,113 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Views\Login\LoginViewModel.cs~RF5379f20.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    <PackageReference Include="Syncfusion.Xamarin.SfSchedule" Version="16.4.0.47" />
+    <PackageReference Include="System.ServiceModel.Duplex" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Http" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.NetTcp" Version="4.5.3" />
+    <PackageReference Include="System.ServiceModel.Security" Version="4.5.3" />
+    <PackageReference Include="Xam.Plugins.Notifier" Version="3.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.5.231" />
+    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1009999" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\UserTypeInterface\UserTypeInterface.csproj" />
+    <ProjectReference Include="..\..\ZPISRokovnikServiceProxy\ZPISRokovnikServiceProxy.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Plugin.LocalNotifications">
+      <HintPath>C:\Users\root\.nuget\packages\xam.plugins.notifier\3.0.1\lib\MonoAndroid10\Plugin.LocalNotifications.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\Login\LoginView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="Views\MainTabbedPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Evidencije\EvidencijeProbacija\EvidencijeProbacijaMainView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Evidencije\EvidencijeZatvor\EvidencijaPosjetiteljaZatvorenicimaNaUlazu\EvidencijaPosjetiteljaZatvorenikaNaUlazuListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Evidencije\EvidencijeZatvor\EvidencijaRasporedaZatvorenikaPoRadnimMjestima\EvidencijaRasporedaZatvorenikaPoRadnimMjestimaListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Evidencije\EvidencijeZatvor\EvidencijaSudskogNadzora\EvidencijaSudskogNadzoraListView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Kalendar\KalendarView\KalendarView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Kalendar\UnesiNapomenuView\UnesiNapomenuView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainProbacijaTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainZatvorTabbedPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainView\MainDetails.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainView\MainProbacijaView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainView\MainSearch.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainView\MainZatvorView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+    <EmbeddedResource Update="Views\Postavke\PostavkeView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Connected Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MainZatvorTabbedPage.xaml.cs">
+      <DependentUpon>MainZatvorTabbedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\MainView\MainZatvorView.xaml.cs">
+      <DependentUpon>MainZatvorView.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+</Project>
